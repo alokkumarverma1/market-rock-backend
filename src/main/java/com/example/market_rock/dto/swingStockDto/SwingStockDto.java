@@ -1,5 +1,7 @@
 package com.example.market_rock.dto.swingStockDto;
 
+import com.google.api.client.auth.oauth2.Credential;
+import com.google.cloud.firestore.FieldValue;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -31,5 +33,6 @@ public class SwingStockDto {
     private String other;
     // yearly profit
     private SwingStockReturnDto swingStockReturnDto;
+    private FieldValue createdAt;
 
 }
