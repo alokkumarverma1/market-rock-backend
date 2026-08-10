@@ -5,11 +5,7 @@ import com.example.market_rock.dto.PostDto;
 import com.example.market_rock.dto.swingStockDto.SwingStockDto;
 import com.google.cloud.firestore.FieldValue;
 import com.google.cloud.firestore.Firestore;
-import com.google.firebase.cloud.FirestoreClient;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.swing.*;
 
 @Service
 public class RockService {
@@ -23,24 +19,16 @@ public class RockService {
 
 
     // add swing stock
-    public String addSwingStock(SwingStockDto swingStockDto){
-     try{
-         swingStockDto.setCreatedAt(FieldValue.serverTimestamp());
+    public String addSwingStock(SwingStockDto swingStockDto) throws  Exception{
+            swingStockDto.setCreatedAt(FieldValue.serverTimestamp());
          db.collection("swingstocks").add(swingStockDto).get();
          return "add success";
-      }catch (Exception e){
-       return "add failed";
-     }
     }
 
     // add indexPrice
-    public String addIndexPrice(IndexDto indexDto){
-        try{
-            indexDto.setCreatedAt(FieldValue.serverTimestamp());
-            db.collection("indexprice").add(indexDto).get();
-        }catch (Exception e){
-            return "something went wrong";
-        }
+    public String addIndexPrice(IndexDto indexDto) throws Exception {
+        indexDto.setCreatedAt(FieldValue.serverTimestamp());
+        db.collection("indexprice").add(indexDto).get();
         return "add success";
     }
 

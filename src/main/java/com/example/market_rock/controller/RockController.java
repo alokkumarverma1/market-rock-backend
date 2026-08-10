@@ -18,16 +18,16 @@ public class RockController {
 
     // add rock swing stock
     @PostMapping("/addSwing")
-    public void AddSwingStock(@RequestBody SwingStockDto swingStockDto) throws  Exception{
+    public ResponseEntity<?> AddSwingStock(@RequestBody SwingStockDto swingStockDto) throws  Exception{
            String res = rockService.addSwingStock(swingStockDto);
-        System.out.println(res);
+           return ResponseEntity.ok().body(res);
        }
 
     // add index
     @PostMapping("/addIndex")
-    public String addIndex(@RequestBody IndexDto indexDto) throws Exception{
+    public ResponseEntity<?> addIndex(@RequestBody IndexDto indexDto) throws Exception{
     String res = rockService.addIndexPrice(indexDto);
-    return  res;
+    return  ResponseEntity.ok().body(res);
     }
 
     // add post
