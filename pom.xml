@@ -84,6 +84,12 @@
 			<version>0.12.6</version>
 			<scope>runtime</scope>
 		</dependency>
+<!--		google api dependency -->
+		<dependency>
+			<groupId>com.google.genai</groupId>
+			<artifactId>google-genai</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
